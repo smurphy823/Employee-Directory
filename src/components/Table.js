@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import API from "../utils/api"
+import Search from "./Search"
 
 class Table extends Component {
     state = {
@@ -27,9 +28,37 @@ class Table extends Component {
         })
     }
 
+
+    sortByName = () => {
+        const sortEmployees = this.state.employees.sort((a,b) => {
+            if(b.name.first > a.name.first) {
+                return -1
+            }
+            else if(a.name.first > b.name.first) {
+                return 1
+            }
+            return 0
+        })
+        if(this.state.order === "descend") {
+            sortEmployees.reverse()
+            this.setState({
+                order: "ascend"
+            })
+        }
+        else{
+            this.setState({
+                order: "descend"
+            })
+        }
+        this.setState({
+            filteredEmp: sortEmployees
+        })
+    }
+
     render(){
         return(
             <div>
+                <Search handleSearch = {this.handleSearch}/>
                 <table>
                     <thead>
                         <tr>
@@ -37,7 +66,11 @@ class Table extends Component {
                                 Image
                             </th>
                             <th>
-                                Name
+                                Name <span style = {{
+                                    cursor: "pointer"
+                                }} onClick = {
+                                    this.sortByName
+                                }></span>
                             </th>
                             <th>
                                 Phone

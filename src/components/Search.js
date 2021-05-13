@@ -4,7 +4,7 @@ function Search (props) {
     return(
         <div>
             <form>
-                <input type = "search"/>
+                <input type = "search" onChange = {event => props.handleSearch(event)}/>
             </form>
         </div>
     )
