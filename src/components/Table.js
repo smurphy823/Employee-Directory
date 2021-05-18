@@ -65,12 +65,13 @@ class Table extends Component {
                             <th>
                                 Image
                             </th>
-                            <th>
+                            <th onClick = {() => {
+                                    this.sortByName()
+                                }
+                                }>
                                 Name <span style = {{
                                     cursor: "pointer"
-                                }} onClick = {
-                                    this.sortByName
-                                }></span>
+                                }} ></span>
                             </th>
                             <th>
                                 Phone
