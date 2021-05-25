@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/smurphy823/Employee-Directory/precache-manifest.0b45a4e4cbad77bc2ee2e70cfb627abe.js"
+  "/Employee-Directory/precache-manifest.09b2d7f84eb98c2e4a8329f220cbb8a4.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/smurphy823/Employee-Directory/index.html", {
+workbox.routing.registerNavigationRoute("/Employee-Directory/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
